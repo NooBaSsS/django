@@ -1,0 +1,14 @@
+{% extends 'my_app/base.html' %}
+{% block title %}
+    a
+{% endblock %}
+{% block body %}
+<form action="{% url 'my_app:add' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form_fields.as_p }}
+    <input type="submit">
+</form>
+<a href="{% url 'my_app:index' %}">
+    main
+</a>
+{% endblock %}
